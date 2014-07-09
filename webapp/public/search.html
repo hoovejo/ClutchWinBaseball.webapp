@@ -1,0 +1,17 @@
+<div class="form-group" data-ng-controller="search as vm">
+    <h3>Batter filters</h3>
+    <div class="input-group form-search">
+        <span class="input-group-addon">Year</span>
+        <select data-ng-model="vm.searchprops.year"
+                data-ng-options="(o.displayname()) for o in vm.searchprops.years"
+                data-ng-change="vm.teamsByYear()"
+                class="form-control"></select>
+    </div>
+    <div class="input-group form-search">
+        <span class="input-group-addon">Team</span>
+        <select data-ng-model="vm.searchprops.team"
+                data-ng-options="(t.displayname()) for t in vm.searchprops.teams"
+                data-ng-change="vm.battersByTeam()"
+                class="form-control"></select>
+    </div>
+</div>

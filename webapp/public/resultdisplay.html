@@ -1,0 +1,32 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped table-condensed">
+        <thead>
+            <h6 data-ng-show="results.array.fieldnames">Click a row to see results for the year</h6>
+            <tr>
+                <th data-ng-repeat="f in results.array.fieldnames" data-ng-bind="f.name | heading | capitalize"></th>
+            </tr>
+        </thead>
+        <ul class="pager" data-ng-show="results.array.rows.length>=results.pagesize">
+            <li class="previous">
+                <a data-vs-disabled="results.page == 0" class="btn btn-xs btn-info"
+                   data-ng-click="results.page=results.page-1">&larr; Prev</a>
+            </li>
+            <span data-ng-bind="results.page+1"></span> /
+            <span data-ng-bind="results.numberof(results.array.rows)"></span>
+            <li class="next">
+                <a data-vs-disabled="results.page >= results.array.rows.length/results.pagesize - 1"
+                   class="btn btn-xs btn-info" data-ng-click="results.page=results.page+1">Next &rarr;</a>
+            </li>
+        </ul>
+        <tbody>
+            <tr data-ng-repeat="row in results.array.rows | startFrom:results.page*results.pagesize | limitTo:results.pagesize"
+                data-ng-click="vm.goToDrillDown(row);">
+                <td data-ng-repeat="f in results.array.fieldnames" data-ng-bind="row[f.name]"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div data-ng-show="vm.isBusy" class="page-splash dissolve-animation">
+        <div data-vs-spinner="vm.spinnerOptions"></div>
+        <div class="page-splash-message page-splash-message-subtle" data-ng-bind="vm.busyMessage"></div>
+    </div>
+</div>

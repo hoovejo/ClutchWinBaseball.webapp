@@ -1,0 +1,14 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped table-condensed">
+        <thead>
+            <tr>
+                <th data-ng-repeat="ddfname in vm.drillDownResults.fieldnames" data-ng-bind="ddfname.name | heading | capitalize"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="ddrow in vm.drillDownResults.rows">
+                <td data-ng-repeat="ddfield in vm.drillDownResults.fieldnames" data-ng-bind="ddrow[ddfield.name]"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

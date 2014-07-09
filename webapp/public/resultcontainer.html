@@ -1,0 +1,11 @@
+<div class="padd">
+    <div class="view-container dissolve-animation" data-ng-show="vm.drillDownResults.rows">
+        <button type="submit" class="btn btn-default btn-lg btn-primary" data-ng-click="vm.clear()">Back</button>
+    </div>
+    <div class="view-container dissolve-animation" data-ng-show="results.array.fieldnames" data-ng-hide="vm.drillDownResults.rows">
+        <vs-result-display />
+    </div>
+    <div class="view-container dissolve-animation" data-ng-show="vm.drillDownResults.rows">
+        <vs-results-drilldown />
+    </div>
+</div>

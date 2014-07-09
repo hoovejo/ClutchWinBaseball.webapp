@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "webapp",
+  "main": "server.js",
+  "author": {
+    "name": "Joe",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "bundle-up2": "^0.4.5",
+    "express": "^4.5.0",
+    "jade": "*",
+    "method-override": "^2.0.2",
+    "morgan": "^1.1.1",
+    "node-rest-client": "^1.0.0",
+    "serve-favicon": "^2.0.1",
+    "stylus": "*"
+  }
+}

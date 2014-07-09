@@ -1,0 +1,19 @@
+<div data-ng-controller="champion as childvm">
+    <div data-ng-show="childvm.showChampList" class="view-container dissolve-animation">
+        <h3 data-ng-bind="vm.contr.cheading"></h3>
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon">
+                <a data-ng-click="childvm.clear()">Clear</a>
+            </span>
+            <input class="input-sm" data-ng-model="childvm.championsSearch"
+                   data-ng-keyup="childvm.runFilter($event)"
+                   placeholder="filter..." />
+        </div>
+        <div class="form-search">
+            <select data-ng-model="vm.contr.champion"
+                    data-ng-options="(c.displayname()) for c in childvm.getChampions()"
+                    data-ng-change="vm.selectChamp()"
+                    size="5" class="form-search"></select>
+        </div>
+    </div>
+</div>
